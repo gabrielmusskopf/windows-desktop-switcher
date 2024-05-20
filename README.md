@@ -1,6 +1,31 @@
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U82G0A5)
+#### Changes
 
+This fork contains updated [DLL library](https://github.com/Ciantic/VirtualDesktopAccessor/releases/tag/2024-01-25-windows11) that works with Windows 11 ([see this issue](https://github.com/pmb6tz/windows-desktop-switcher/issues/94)) and another improvements.
+
+Basic keybindings were changed to what I'm used from my Linux config:
+| Key binding | Action              |
+|-------------|---------------------|
+| `Win + 1`   | Jump to workspace 1 |
+| `Win + 2`   | Jump to workspace 2 |
+| `Win + 3`   | Jump to workspace 3 |
+| `Win + q`   | Jump to workspace 4 |
+| `Win + w`   | Jump to workspace 5 |
+| `Win + e`   | Jump to workspace 6 |
+
+Because Windows use this default global keybinding, they must be removed to avoid conflit. To do so, execute this in command prompt [see](https://superuser.com/a/725556):
+```shell
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "1" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "2" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "3" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "e" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "w" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "q" /f
+```
+---
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U82G0A5)
 # windows-desktop-switcher
+
 An AutoHotkey script for Windows that lets a user switch virtual desktops by pressing <kbd>CapsLock</kbd> and a number row key at the sime time (e.g. <kbd>CapsLock</kbd> + <kbd>2</kbd> to switch to Desktop 2). It also provides other features, such as customizing the key combinations, creation/deletion of desktops by hotkey, etc. (see Hotkeys section below).
 
 ## Hotkeys
