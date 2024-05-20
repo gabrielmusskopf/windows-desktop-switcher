@@ -75,8 +75,8 @@ createInitialDesktops(6)
 ; CapsLock & i::MoveCurrentWindowToDesktop(8)
 ; CapsLock & o::MoveCurrentWindowToDesktop(9)
 ; 
-; CapsLock & Right::MoveCurrentWindowToRightDesktop()
-; CapsLock & Left::MoveCurrentWindowToLeftDesktop()
+#+PgDn::MoveCurrentWindowToRightDesktop()
+#+PgUp::MoveCurrentWindowToLeftDesktop()
 
 ; === INSTRUCTIONS ===
 ; Below is the alternate key configuration. Delete symbol ; in the beginning of the line to enable.
